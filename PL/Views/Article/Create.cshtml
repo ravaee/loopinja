@@ -1,0 +1,42 @@
+@model CreateViewModel;
+@using loppinja.Models.ViewModels.ActionViewModels.Articles;
+
+<div>
+    @Html.Partial("~/PL/Views/Shared/Partial/Map.cshtml", Model?.MapViewModel)
+</div>
+<br>
+<div class="row">
+    <div class="col">
+        <p class=" article-topic-font">مقاله جدید</p>
+    </div>
+</div> 
+<hr>
+<div class="row">
+    <div class="col-xs-12 col-md-8 col-lg-9">
+        <form class="form-horizontal" asp-action="Create" asp-controller="Article">
+            <div class="form-group">
+                <label for="name" class="primary-font">نام مقاله: </label>
+                <input id="name" name="Topic" type="text" class="form-control primary-font" placeholder="نام مقاله را وارد کنید"/>
+                <br>
+                <label for="name" class="primary-font">مقاله خود را بنویسید: </label>
+                <div>
+                    <button class="btn btn-outline-dark btn-sm">افزودن تصویر از آلبوم</button>  <button class="btn btn-outline-info btn-sm">افزودن به مقاله</button>
+                </div>
+                <br>
+                <textarea id="name" type="text" name="Body" class="form-control primary-font article-auther-body" placeholder="کادر مقاله"></textarea>
+                <br>
+                <div>
+                    <button type="submit" class="btn btn-success">ثبت و انتشار مقاله</button>
+                    <button class="btn btn-primary">ذخیره مقاله</button>
+                    
+                </div>
+                
+            </div>
+                
+        </form>
+        
+    </div>
+    <div class="col-xs-12 col-md-4 col-lg-3">
+
+    </div>
+</div> 

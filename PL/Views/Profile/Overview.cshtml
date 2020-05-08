@@ -1,0 +1,17 @@
+﻿@using loppinja.Models.ViewModels.ActionViewModels.Profile;
+@model OverviewViewModel;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    @Html.Partial("~/Views/Shared/Partial/Map.cshtml", Model?.MapViewModel)
+</div>
+
+<div>
+    @Html.Partial("~/Views/Shared/Partial/Message.cshtml", Model?.MessageViewModel)
+</div>
+
+@Model.User.Id
+@Model.User.Email

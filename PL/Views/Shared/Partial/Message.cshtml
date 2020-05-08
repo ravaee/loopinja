@@ -1,0 +1,41 @@
+@using loppinja.Models.ViewModels.Partial;
+@model MessageViewModel;
+
+@if(Model != null) {
+
+    <div class="row">
+
+        <div class="co">
+
+            @if(Model.Errors.Count > 0){
+                <div class="alert alert-danger" role="alert">
+                    @foreach (var item in Model.Errors)
+                    {
+                        <p class="alert-text">@item</p>
+                    }
+                </div>
+            }
+
+            @if(Model.Messages.Count > 0){
+                <div class="alert alert-primary" role="alert">
+                    @foreach (var item in Model.Messages)
+                    {
+                        <p class="alert-text">@item</p>
+                    }
+                </div>
+            }
+
+            @if(Model.SuccessMessages.Count > 0){
+                <div class="alert alert-success" role="alert">
+                    @foreach (var item in Model.SuccessMessages)
+                    {
+                        <p class="alert-text">@item</p>
+                    }
+                </div>
+            }
+
+        </div>
+
+    </div>
+}
+

@@ -1,0 +1,26 @@
+@model LoginViewModel;
+@using loppinja.Models.ViewModels.ActionViewModels.Account;
+
+<h3 class="primary-font">ورود</h3>
+<hr>
+<div>
+    @Html.Partial("~/Views/Shared/Partial/Message.cshtml", Model?.MessageViewModel)
+</div>
+<div class="row">
+    <div class="col-md-6 col-lg-4 col-sm-8 col-xs-12">
+        <form class="form" asp-controller="Account" asp-action="Login" method="post">
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <label asp-for="Email" class="primary-font">پست-الکترونیکی: </label>
+                <input id="name" asp-for="Email" type="text" class="form-control primary-font" placeholder="پست الکترونیکی"/>
+                <br>
+                <label asp-for="Password" class="">کلمه عبور: </label>
+                <input id="name" asp-for="Password" type="password" class="form-control primary-font" placeholder="رمز عبور"/>
+                <br>
+                <div>
+                    <button class="btn btn-success">ورود</button>                    
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

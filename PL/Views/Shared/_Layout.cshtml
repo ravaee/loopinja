@@ -1,0 +1,105 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using loppinja.Models.Domains;
+@inject UserManager<ApplicationUser> UserManager
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - loppinja</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/font/css/fontiran.css" />
+    <script src="https://kit.fontawesome.com/89c4e8e3a6.js" crossorigin="anonymous"></script>
+</head>
+<body dir="rtl">
+    <header>
+        @{
+            if(!User.Identity.IsAuthenticated) {
+                <div  style="background-color: purple;"> 
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <p class="login-row-text">
+                                    برای استفاده از تمامی امکانات سایت <a asp-controller="Account" asp-action="Register" class="btn btn-primary btn-sm">ثبت نام</a> کنید یا <a  class="btn btn-primary btn-sm" asp-controller="Account" asp-action="Login">وارد شوید</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            else 
+            { 
+                <div  style="background-color: purple;"> 
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6" style="margin-top: 5px; margin-bottom: 5px;">
+                                <div class="nav nav-pills standard-small-font secondery-font-color" style="margin-s">
+                                    
+                                    <span><i style="margin-top:3px" class="fa fa-user-circle"> </i></span>
+                                    <span  style="margin-right: 5px;"><a style="color: whitesmoke; ">کاربر : محمد روایی </a></span>
+                                </div>
+                            </div>
+                            <div class="col-6" style="margin-top: 5px; margin-bottom: 5px;">
+                                <div class="nav nav-pills standard-small-font secondery-font-color" style="float: left;">
+                                    
+                                    <li><i style="margin-right: 5px; margin-left: 2px; margin-top:4px;" class="	far fa-eye"> </i></li>
+                                    <li  style="margin-right: 5px;"><a asp-action="Overview" asp-controller="Profile" asp-route-userId="@UserManager.GetUserId(User)" style="color: whitesmoke;">مشاهده پروفایل</a></li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            }
+        }
+
+
+
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand nav-title-text" asp-area="" asp-controller="Home" asp-action="Index">مجله اینترنتی لوپینجا</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="standard-small-font nav-link text-dark nav-item-text" asp-area="" asp-controller="Home" asp-action="Index">صفحه اصلی</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="standard-small-font nav-link text-dark nav-item-text" asp-area="" asp-controller="Article" asp-action="Index">مقالات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="standard-small-font nav-link text-dark nav-item-text" asp-area="" asp-controller="Home" asp-action="Privacy">اخبار برنامه نویسی</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="standard-small-font nav-link text-dark nav-item-text" asp-area="" asp-controller="Home" asp-action="Privacy">آموزشی</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - loppinja - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

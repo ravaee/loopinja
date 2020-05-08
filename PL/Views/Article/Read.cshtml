@@ -1,0 +1,134 @@
+@model ReadViewModel;
+@using loppinja.Models.ViewModels.ActionViewModels.Articles;
+
+<div>
+    @Html.Partial("~/PL/Views/Shared/Partial/Map.cshtml", Model?.MapViewModel)
+</div>
+<br>
+<div class="row">
+    <div class="col">
+        <p class=" article-topic-font">جاوا یا سی شارپ!</p>
+    </div>
+</div>    
+<div class="row">
+    <div class="col-md-3">
+        <p class="no-margin article-details-font">
+            <i class="fas fa-user" ></i> نویسنده: محمد روایی
+        </p>
+    </div>
+    <div class="col-md-3">
+        <p class=" no-margin article-details-font">
+            <i class="fas fa-calendar-alt"></i> تاریخ انتشار: 97/05/12
+        </p>
+    </div>
+    <div class="col-md-6">
+        <p class=" no-margin article-details-font" >
+            <i class="fas fa-calendar-alt"></i> دسته بندی: آموزشی
+        </p>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-md-8 col-xs-12 col-lg-9">
+        <div class="article-panel">
+            <div class="article-body">
+                <p class="article-p">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. 
+                </p>
+                <p class="article-p">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. 
+                </p>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <p class="no-margin article-details-font" style="margin-right: 10px;">
+                        <i class="fas fa-comment-dots fa-lg" ></i> 0 نظر
+                    </p>
+                </div>
+                <div class="col-6">
+                    <p class="no-margin article-details-font" style="float: left; margin-left: 10px;">
+                        <i class="fas fa-share-alt fa-lg"></i> اشتراک گذاری 
+                    </p>
+                </div>
+                
+            </div>          
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-6">
+                <p class="topic-text" style="margin:0px;">نظرات</p>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-primary" style="float: left;">ارسال نظر</button>
+            </div>
+        </div>
+        <hr>
+        <div class="comment-panel" style="">
+            <br>
+            <p class="text-center primary-font">هیچ نظری ثبت نشده است.</p>
+            <br>
+        </div>
+        
+    </div>
+    <div class="col-md-4 col-xs-12 col-lg-3">
+        <div class="row">
+            <div class="col">
+                <div class="d-md-none d-xs-block">
+                    <br>
+                </div>
+                <h1 class="left-bar-topic">مقاله های پیشنهادی</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" style="padding: 5px;">
+                <div class="card text-center" >
+                    <img class="card-img-top" src="~/photo/sp1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">متن ساختگی</h5>
+                        <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                        <a href="#" class="btn btn-primary">خواندن مقاله</a>
+                    </div>
+                </div>
+                <br>
+                <div class="card text-center" >
+                    <img class="card-img-top" src="~/photo/sp1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">متن ساختگی</h5>
+                        <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                        <a href="#" class="btn btn-primary">خواندن مقاله</a>
+                    </div>
+                </div>
+                <br>
+                <div class="card text-center" >
+                    <img class="card-img-top" src="~/photo/sp1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">متن ساختگی</h5>
+                        <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                        <a href="#" class="btn btn-primary">خواندن مقاله</a>
+                    </div>
+                </div>
+                <br>
+                <div class="card text-center">
+                    <img class="card-img-top" src="~/photo/sp1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">متن ساختگی</h5>
+                        <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                        <a href="#" class="btn btn-primary">خواندن مقاله</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

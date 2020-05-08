@@ -1,0 +1,17 @@
+﻿@model MRDateTime;
+@using loppinja.Controllers;
+
+<form action="DateTimeTest" method="post" >
+    <input type="text" name="Year" placeholder="year" >
+    <input type="text" name="Month" placeholder="month">
+    <input type="text" name="Day" placeholder="day">
+    <input type="submit" value="process it">
+</form>
+
+@if(Model != null){
+    <label> converted datetime is : </label>
+    <label>@Model.Year / @Model.Month / @Model.Day</label>
+}
+
+
+

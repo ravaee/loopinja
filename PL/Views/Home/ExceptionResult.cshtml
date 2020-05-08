@@ -1,0 +1,19 @@
+﻿@model ExceptionResultViewModel;
+@using loppinja.Models.ViewModels.ActionViewModels.Home;
+
+@{
+    ViewData["Title"] = "Exception Result";
+}
+
+<h3 class="primary-font">خطایی رخ داد</h3>
+
+<div class="row">
+    <div class="col">
+        <p>
+            @Model.Exception.Message
+        </p>
+        <p>
+            @Model.Exception.InnerException.ToString()
+        </p>
+    </div>
+</div>

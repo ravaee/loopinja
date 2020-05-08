@@ -1,0 +1,27 @@
+@model RegisterViewModel;
+@using loppinja.Models.ViewModels.ActionViewModels.Account;
+
+<h3 class="primary-font">ثبت نام</h3>
+<hr>
+@Html.Partial("~/Views/Shared/Partial/Message.cshtml", Model?.MessageViewModel)
+<div class="row">
+    <div class="col-md-6 col-lg-4 col-sm-8 col-xs-12">
+        <form class="form" asp-controller="Account" asp-action="Register" method="post">
+            <div class="form-group">
+                <label asp-for="Email" class="primary-font">پست-الکترونیکی: </label>
+                <input id="name" asp-for="Email" type="text" class="form-control primary-font" placeholder="پست الکترونیکی خود را وارد کنید"/>
+                <br>
+                <label asp-for="Password" class="">کلمه عبور: </label>
+                <input id="name" asp-for="Password" type="password" class="form-control primary-font" placeholder="پست الکترونیکی خود را وارد کنید"/>
+                <br>
+                <label asp-for="ConfirmPassword" class="">تکرار کلمه عبور: </label>
+                <input id="name" asp-for="ConfirmPassword" type="password" class="form-control primary-font" placeholder="پست الکترونیکی خود را وارد کنید"/>
+                <hr>
+                <div>
+                    <button class="btn btn-success">ثبت نام</button>                    
+                    <button class="btn btn-warning">فراموشی رمز عبور</button>                    
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

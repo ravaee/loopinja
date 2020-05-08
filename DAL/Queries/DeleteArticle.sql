@@ -1,0 +1,1 @@
+DELETE  FROM loopimag.Articles where Id = '1' 

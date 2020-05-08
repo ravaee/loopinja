@@ -1,0 +1,28 @@
+@using loppinja.Models.ViewModels.Partial;
+@model MapViewModel;
+
+@if(Model != null){
+
+    <div class="row">
+
+            <ul class="nav nav-pills">
+
+                <li ><span class="map-primary-font"> شما اینجا هستید: </span></li>
+                    @{
+                        int index = 0;
+                    }
+                    @foreach (var item in Model.items)
+                    {
+                        index++;
+
+                        if(index < Model.items.Count){
+                            <li  style="margin-right: 5px;"><a class="map-primary-font" href="#sec1"> @item </a></li>
+                            <li><i style="margin-right: 5px; margin-left: 2px;" class="fas fa-angle-left fa-sm"> </i></li>
+                        }else{
+                            <li  style="margin-right: 5px;" ><a class="map-small-font"> @item</a></li>
+                            
+                        }
+                    }
+            </ul>
+    </div>
+}

@@ -1,0 +1,35 @@
+@model IndexViewModel;
+@using loppinja.Models.ViewModels.ActionViewModels.Articles;
+
+
+<h5 class="primary-font">Index</h5>
+<hr>
+
+
+
+<div class="container">
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Topic</th>
+        <th>Created Date</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    @foreach (var article in @Model.Articles)
+    {
+      <tr>
+        <td>@article.Id</td>
+        <td>@article.Topic</td>
+        <td>@article.CreateDate</td>
+      </tr>
+
+    }
+      
+    </tbody>
+  </table>
+</div>
