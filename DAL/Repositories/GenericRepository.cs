@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using loppinja.Common.DAL;
+using loppinja.Common.Models.Domains;
 using loppinja.Models.Context;
 using loppinja.Models.Domains;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +12,8 @@ using Microsoft.EntityFrameworkCore;
 namespace loppinja.DAL
 {
 
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseModel
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> 
+    where TEntity : BaseModel
     {
         private ApplicationDbContext context;
         private DbSet<TEntity> dbSet;
@@ -78,6 +81,16 @@ namespace loppinja.DAL
         {
             dbSet.Attach(entityToUpdate);
             context.Entry(entityToUpdate).State = EntityState.Modified;
+        }
+
+        public ApplicationDbContext GetContext()
+        {
+            return this.context;
+        }
+
+        public int GetModelCount()
+        {
+            return dbSet.Count();
         }
     }
 }

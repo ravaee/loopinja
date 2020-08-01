@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using loppinja.Models.ViewModels.ActionViewModels.Home;
 using loppinja.Models.Context;
+using loppinja.Common.Models.Domains;
 
 namespace loppinja.Controllers
 {
@@ -30,10 +31,6 @@ namespace loppinja.Controllers
         {
         }
 
-        protected void PrintLog(LogLevel logLevel, object logBody)
-        {
-            this._logger.Log(logLevel, (string)logBody);
-        }
 
         protected IActionResult RedirectToExceptionPage(Exception e)
         {

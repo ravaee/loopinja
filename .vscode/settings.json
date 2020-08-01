@@ -1,0 +1,24 @@
+{
+    "sqltools.connections": [
+        {
+            "driver": "MSSQL",
+            "name": "Server=185.165.116.47,1435;Database=loopmagi_; User Id=loopimag;password=Nngrdd211!; Trusted_Connection=False;MultipleActiveResultSets=true",
+            "previewLimit": 50
+        },
+        {
+            "driver": "MSSQL",
+            "name": "Server=185.165.116.47,1435;Database=loopmagi_; User Id=loopimag;password=Nngrdd211!; Trusted_Connection=False;MultipleActiveResultSets=true",
+            "previewLimit": 50
+        },
+        {
+            "driver": "MSSQL",
+            "name": "Server=185.165.116.47,1435;Database=loopmagi_; User Id=loopimag;password=Nngrdd211!; Trusted_Connection=False;MultipleActiveResultSets=true",
+            "previewLimit": 50
+        },
+        {
+            "driver": "MSSQL",
+            "name": "Server=185.165.116.47,1435;Database=loopmagi_; User Id=loopimag;password=Nngrdd211!; Trusted_Connection=False;MultipleActiveResultSets=true",
+            "previewLimit": 50
+        }
+    ]
+}

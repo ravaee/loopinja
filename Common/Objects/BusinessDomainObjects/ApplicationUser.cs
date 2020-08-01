@@ -1,12 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace loppinja.Models.Domains
+namespace loppinja.Common.Models.Domains
 {
     public class ApplicationUser: IdentityUser
     {
 
-        
-        
         
     }
 }

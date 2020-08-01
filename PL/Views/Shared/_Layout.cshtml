@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity;
-@using loppinja.Models.Domains;
+@using loppinja.Common.Models.Domains;
 @inject UserManager<ApplicationUser> UserManager
     
 <!DOCTYPE html>
@@ -70,8 +70,12 @@
                         <li class="nav-item">
                             <a class="standard-small-font nav-link text-dark nav-item-text" asp-area="" asp-controller="Home" asp-action="Index">صفحه اصلی</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="standard-small-font nav-link text-dark nav-item-text" asp-area="" asp-controller="Article" asp-action="Index">مقالات</a>
+                        <li class="nav-item dropdown">
+                            <a class="standard-small-font nav-link text-dark nav-item-text dropdown-toggle" data-toggle="dropdown" href="#">مقالات</a>
+                            <div class="dropdown-menu">
+                                <a class="standard-small-font nav-link text-dark nav-item-text" asp-area="" asp-controller="Article" asp-action="create">ایجاد مقاله</a>
+                                <a class="standard-small-font nav-link text-dark nav-item-text" asp-area="" asp-controller="Article" asp-action="Index">لیست مقالات</a>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="standard-small-font nav-link text-dark nav-item-text" asp-area="" asp-controller="Home" asp-action="Privacy">اخبار برنامه نویسی</a>

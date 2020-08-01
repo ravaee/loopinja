@@ -1,14 +1,18 @@
 using System;
-using loppinja.DAL.Interface;
+using System.Threading.Tasks;
+using loppinja.Common.DAL;
+using loppinja.Common.Models.Domains;
+using loppinja.DAL.Repositories;
 using loppinja.Models.Context;
 using loppinja.Models.Domains;
 
-namespace loppinja.DAL.InterfaceDepartment
+namespace loppinja.DAL.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
-        private GenericRepository<Article> _articleRepository;
+        private Object _genericRepository;
+        private ArticleRepository _articleRepository;
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -16,23 +20,22 @@ namespace loppinja.DAL.InterfaceDepartment
         }
         
 
-        public GenericRepository<Article> ArticleRepository
+        public ArticleRepository ArticleRepository
         {
             get
             {
 
                 if (this._articleRepository == null)
                 {
-                    this._articleRepository = new GenericRepository<Article>(_context);
+                    this._articleRepository = new ArticleRepository(_context);
                 }
                 return _articleRepository;
             }
         }
 
-
-        public void Save()
+        public async Task<int> Save()
         {
-            _context.SaveChanges();
+            return await _context.SaveChangesAsync();
         }
 
         private bool disposed = false;
@@ -55,5 +58,13 @@ namespace loppinja.DAL.InterfaceDepartment
             GC.SuppressFinalize(this);
         }
 
+        public GenericRepository<T> GetRepository<T>() where T : BaseModel
+        {
+            if(this._genericRepository == null){
+                this._genericRepository = new GenericRepository<T>(_context);
+            }
+
+            return (GenericRepository<T>)this._genericRepository;
+        }
     }
 }

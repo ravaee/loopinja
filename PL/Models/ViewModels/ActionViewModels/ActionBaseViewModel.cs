@@ -7,6 +7,7 @@ namespace loppinja.Models.ViewModels.ActionViewModels
     {
         public ActionBaseViewModel()
         {
+            this.MessageViewModel = new MessageViewModel();
         }
 
         public MapViewModel MapViewModel {get; set;}

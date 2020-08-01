@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using loppinja.Common.Models.Domains;
 
 namespace loppinja.Models.Domains
 {

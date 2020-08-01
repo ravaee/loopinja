@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using loppinja.Models.Utilities;
 
-namespace loppinja.Models.Domains
+namespace loppinja.Common.Models.Domains
 {
     public class Author : BaseModel
     {

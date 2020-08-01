@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using loppinja.Models.Domains;
 using loppinja.Models.ViewModels.ActionViewModels.Home;
 using loppinja.Models.Context;
+using loppinja.Common.Models.Domains;
 
 namespace loppinja.Controllers
 {

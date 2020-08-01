@@ -11,6 +11,7 @@ using loppinja.Services;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using loppinja.Models.Context;
+using loppinja.Common.Models.Domains;
 
 namespace loppinja.Controllers
 {
@@ -94,7 +95,6 @@ namespace loppinja.Controllers
                     var confirmationLink = Url.Action("ConfirmEmail", "Account", 
                                             new { userId = user.Id, token = token }, Request.Scheme);
 
-                    PrintLog(LogLevel.Warning, confirmationLink);
 
                     await _emailSender.SendEmailAsync(user.Email, "لینک فعالسازی اکانت لوپ مگ", confirmationLink);
 
@@ -158,8 +158,6 @@ namespace loppinja.Controllers
                 });
 
             }catch(Exception e){
-
-                PrintLog(LogLevel.Error, e.Message);
 
                 return View("Login", new LoginViewModel{
 

@@ -12,6 +12,7 @@ using loppinja.Models.Context;
 using loppinja.Models.ViewModels.ActionViewModels.Articles;
 using loppinja.Models.ViewModels.ActionViewModels.Profile;
 using loppinja.Models.Utilities;
+using loppinja.Common.Models.Domains;
 
 namespace loppinja.Controllers
 {

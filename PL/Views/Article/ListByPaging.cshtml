@@ -1,0 +1,49 @@
+@model ListViewModel;
+@using loppinja.Models.ViewModels.ActionViewModels.Articles;
+
+<div>
+    @Html.Partial("~/PL/Views/Shared/Partial/Map.cshtml", Model?.MapViewModel)
+</div>
+<br>
+<h2 class="primary-font">لیست مقالات</h2>
+<br>
+<div>
+    @Html.Partial("~/PL/Views/Shared/Partial/Message.cshtml", Model?.MessageViewModel)
+</div>
+
+<div class="container">
+  <p>لیست مقالات به صورت paginate  نمایش داده مشود</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Topic</th>
+        <th>Created Date</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    @foreach (var article in @Model.Articles)
+    {
+      <tr>
+        <td>@article.Id</td>
+        <td>@article.Topic</td>
+        <td>@article.CreateDate</td>
+      </tr>
+
+    }
+      
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>صفحه</td>
+        <td>@Model.Pagination.pageNumber</td>
+      </tr>
+      <tr>
+        <td>باقی مانده</td>
+        <td>@Model.LeftOverCount</td>
+        
+    </tr>
+    </tfoot>
+  </table>
+</div>

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using loppinja.Models.Domains;
+using loppinja.Common.Models.Domains;
 
 namespace loppinja.Models.Context
 {
@@ -12,7 +13,7 @@ namespace loppinja.Models.Context
         }
 
         public virtual DbSet<Article> Articles { get; set; } 
-        public virtual DbSet<Article> Commands { get; set; } 
+        public virtual DbSet<Comment> Comments { get; set; } 
         
     }
 }

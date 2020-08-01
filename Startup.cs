@@ -1,13 +1,18 @@
 using System;
+using loppinja.BLL;
+using loppinja.Common.DAL;
+using loppinja.Common.Interfaces.Business;
+using loppinja.Common.Interfaces.Service;
+using loppinja.Common.Models.Domains;
+using loppinja.DAL.UnitOfWork;
 using loppinja.Models.Context;
 using loppinja.Models.Domains;
 using loppinja.Models.Utilities;
-using loppinja.Models.ViewModels.Partial;
 using loppinja.Services;
+using loppinja.Services.ArticleServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -79,7 +84,16 @@ namespace loppinja
 
             services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
             services.AddSingleton<IEmailSender, EmailSender>();
+            //services.AddTransient<ServiceProvider>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<ApplicationDbContext>();
+
+            //business logic resolving
+            services.AddTransient<IArticleBusinessLogic, ArticleBusinessLogic>();
+            services.AddTransient(typeof(IBaseBusinessLogic<>) , typeof(BaseBusinessLogic<>));
+
+            //service resoliving
+            services.AddTransient<IArticleService, ArticleService>();
 
             services.AddRazorPages();
         
